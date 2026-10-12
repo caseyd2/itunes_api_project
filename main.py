@@ -8,7 +8,7 @@ while True:
     params = {
         "term": search,
         "entity": "song",
-        "limit": 20
+        "limit": 5
 }
 
     response = requests.get(url, params=params)
@@ -19,6 +19,7 @@ while True:
         if data["resultCount"] == 0:
             print("No Results Found")
         else:
+            print("\nSearch Results:\n")
             for song in data["results"]:
                 print("Song:", song["trackName"])
                 print("Artist:", song["artistName"])
