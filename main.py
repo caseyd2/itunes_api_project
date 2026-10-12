@@ -3,10 +3,6 @@ import requests
 while True:
     search = input("Enter an artist or a song: ")
 
-    if search.lower() == "quit":
-        print("Goodbye!")
-        break 
-
     url = "https://itunes.apple.com/search"
 
     params = {
@@ -32,6 +28,12 @@ while True:
 
     else: 
         print("There was an issue connecting to the API")
+
+    again = input("Would you like to search again (y/n): ")
+
+    if again.lower() != "y":
+        print("Goodbye!")
+        break
         
 
 
