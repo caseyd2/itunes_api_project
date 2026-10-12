@@ -12,20 +12,21 @@ params = {
 
 response = requests.get(url, params=params)
 
-data = response.json()
+if response.ok:
+    data = response.json()
 
-response = response.json()
-
-if data["resultCount"] == 0:
-    print("No Results Found")
-else:
-    for song in data["results"]:
-        print("Song:", song["trackName"])
-        print("Artist:", song["artistName"])
-        print("Album:", song["collectionName"])
-        print("Genre:", song["primaryGenreName"])
-        print ()
-
+    if data["resultCount"] == 0:
+        print("No Results Found")
+    else:
+        for song in data["results"]:
+            print("Song:", song["trackName"])
+            print("Artist:", song["artistName"])
+            print("Album:", song["collectionName"])
+            print("Genre:", song["primaryGenreName"])
+            print ()
+            
+else: 
+    print("There was an issue connecting to the API")
     
 
 
