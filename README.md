@@ -6,7 +6,7 @@ CSCI 2910 Lab 4
 Issue: The program could not import the requests module
 Fix: Installed the requests package using pip install
 
-Issue: Some searched returned no matching songs.
+Issue: Some searches returned no matching songs.
 Fix: Added a check for resultCount and displayed "No Results Found".
 
 Issue: Program would only allow one search at a time.
